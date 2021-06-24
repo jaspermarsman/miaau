@@ -1,0 +1,28 @@
+.container {
+    margin: 40px;
+    width: 150px;
+}
+
+form {
+    box-sizing: border-box;
+}
+
+input {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+label {
+    color: #E9C46A;
+    margin: 10px;
+}
+
+button {
+    width: 100%;
+    margin: 10px;
+    background-color: #F4A261;
+    color: #264653;
+    border-radius: 18px;
+}
