@@ -5,11 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {FirebaseContext} from "./context/FirebaseContext";
 import { firebase } from "./firebase/config"
+import {ProvideAuth} from "./context/AuthContext";
 
 ReactDOM.render(
     <React.StrictMode>
         <FirebaseContext.Provider value={{firebase}}>
+            <ProvideAuth>
             <App/>
+            </ProvideAuth>
         </FirebaseContext.Provider>
     </React.StrictMode>,
   document.getElementById('root')
