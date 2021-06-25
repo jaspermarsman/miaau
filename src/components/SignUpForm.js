@@ -2,17 +2,19 @@ import React, {useContext, useState} from "react";
 import "./SignUp.css"
 import { useForm } from 'react-hook-form';
 import {useAuth} from "../context/AuthContext";
+import {useHistory} from "react-router-dom";
 
 export default function SignUpForm() {
     const { handleSubmit, formState: { errors }, register, reset } = useForm();
-    // const [email, setEmail] = useState("")
-    // const [password, setPassword] = useState("")
-
+    const history = useHistory();
     const auth = useAuth();
 
     //functie hieronder aanpassen naar catch get?
     function onFormSubmit(data) {
-        auth.signup({ email: data.email, password: data.password, callback: () => {}})
+        auth.signup({
+            email: data.email,
+            password: data.password,
+            callback: () => history.push("/Ontdekken") })
         console.log(data.email, data.password);
         reset({email: "", password: "", });
 
@@ -55,7 +57,7 @@ export default function SignUpForm() {
                 </label>
                 <button
                     type="submit"
-                >Inloggen</button>
+                >Registreer</button>
             </form>
         </div>
     )

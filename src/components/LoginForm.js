@@ -3,12 +3,10 @@ import { useHistory } from "react-router-dom";
 import "./SignUp.css"
 import { useForm } from 'react-hook-form';
 
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../context/AuthContext"
 
 const LoginForm = () => {
     const { handleSubmit, formState: { errors }, register, reset } = useForm();
-    // const [emailValue, setEmailValue] = useState("");
-    // const [passwordValue, setPasswordValue] = useState("");
     const auth = useAuth();
     let history = useHistory();
 

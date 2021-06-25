@@ -8,23 +8,35 @@ import {
 } from "react-router-dom";
 import Login from "./pages/Login"
 import Ontdekken from "./pages/Ontdekken";
+import SignUp from "./pages/SignUp";
+import WebPlayer from "./pages/WebPlayer";
+import PrivateRoute from "./components/PrivateRoute";
+
+import {useAuth} from "./context/AuthContext";
+
 
 function App() {
-  return (
+    const { isLoading } = useAuth();
+  return isLoading ? (
+      <h1>laden, vervang door svg</h1>
+  ) : (
       <Router>
-          <div>
-              <NavigationBar/>
-              <Hero/>
-              <Switch>
-                  <Route path="/Login">
-                      <Login />
-                  </Route>
-                  <Route path="/Ontdekken">
-                      <Ontdekken />
-                  </Route>
-              </Switch>
-
-          </div>
+          <NavigationBar/>
+          <Hero/>
+          <Switch>
+              <PrivateRoute path="/Ontdekken">
+                  <Ontdekken/>
+              </PrivateRoute>
+              <Route path="/Login">
+                  <Login/>
+              </Route>
+              <Route path="/Signup">
+                  <SignUp/>
+              </Route>
+              <Route path="/WebPlayer">
+                  <WebPlayer/>
+              </Route>
+          </Switch>
       </Router>
   );
 }

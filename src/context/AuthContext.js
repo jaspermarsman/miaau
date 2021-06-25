@@ -16,6 +16,7 @@ export const useAuth = () => {
 };
 // Provider hook that creates auth object and handles state
 function useProvideAuth() {
+    const [isLoading, setIsloading] = useState(true);
     const [user, setUser] = useState(null);
     const {firebase} = useContext(FirebaseContext);
     // Wrap any Firebase methods we want to use making sure ...
@@ -75,12 +76,14 @@ function useProvideAuth() {
             } else {
                 setUser(false);
             }
+            setIsloading(false);
         });
         // Cleanup subscription on unmount
         return () => unsubscribe();
     }, []);
     // Return the user object and auth methods
     return {
+        isLoading,
         user,
         signin,
         signup,

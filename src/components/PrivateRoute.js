@@ -1,6 +1,10 @@
+import React from "react";
+import { Redirect, Route } from "react-router-dom";
+import { useAuth} from "../context/AuthContext";
+
 // A wrapper for <Route> that redirects to the login
 // screen if you're not yet authenticated.
-function PrivateRoute({ children, ...rest }) {
+const PrivateRoute = ({ children, ...rest }) => {
     let auth = useAuth();
     return (
         <Route
@@ -11,7 +15,7 @@ function PrivateRoute({ children, ...rest }) {
                 ) : (
                     <Redirect
                         to={{
-                            pathname: "/login",
+                            pathname: "/Signup",
                             state: { from: location }
                         }}
                     />
@@ -20,3 +24,5 @@ function PrivateRoute({ children, ...rest }) {
         />
     );
 }
+
+export default PrivateRoute;
