@@ -1,5 +1,7 @@
 import React, {useEffect} from "react";
 import "./Ontdekken.css"
+import GetPlaylist from "../components/GetPlaylist";
+import SearchSpotifyArtist from "../components/SearchSpotifyArtist";
 
 // hier helper functie van maken
 const clientID = "d4cc4c212e104c4bbfc05f6ac95e9bc1";
@@ -48,6 +50,8 @@ export default function WebPlayer() {
             <h1>Test</h1>
             <p>fhsjkdhfksjahkjhfkjhkj</p>
             <button onClick={handleLogin}>Login bij Spotify</button>
+            <GetPlaylist />
+            <SearchSpotifyArtist />
         </div>
     )
 }
