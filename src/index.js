@@ -6,16 +6,19 @@ import reportWebVitals from './reportWebVitals';
 import {FirebaseContext} from "./context/FirebaseContext";
 import { firebase } from "./firebase/config"
 import {ProvideAuth} from "./context/AuthContext";
+import SelectedOptionsProvider from "./context/SelectedOptionsProvider";
 
 ReactDOM.render(
     <React.StrictMode>
         <FirebaseContext.Provider value={{firebase}}>
             <ProvideAuth>
-            <App/>
+                <SelectedOptionsProvider>
+                <App/>
+                </SelectedOptionsProvider>
             </ProvideAuth>
         </FirebaseContext.Provider>
     </React.StrictMode>,
-  document.getElementById('root')
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
