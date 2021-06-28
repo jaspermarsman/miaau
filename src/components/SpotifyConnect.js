@@ -1,13 +1,9 @@
 import React, {useEffect} from "react";
-// import "./Ontdekken.css"
-import GetPlaylist from "../components/GetPlaylist";
-import SearchSpotifyArtist from "../components/SearchSpotifyArtist";
-import Ontdekken from "./Ontdekken";
 
 // hier helper functie van maken
 const clientID = "d4cc4c212e104c4bbfc05f6ac95e9bc1";
 const authEndpoint = "https://accounts.spotify.com/authorize";
-const redirect = "http://localhost:3000/WebPlayer/";
+const redirect = "http://localhost:3000/Ontdekken/";
 const scopes = [
     "user-read-currently-playing",
     "user-read-playback-state",
@@ -29,7 +25,7 @@ const getReturnedParamsFromSpotifyAuth = (hash) => {
     return paramsSplitUp;
 };
 
-export default function WebPlayer() {
+export default function SpotifyConnect() {
     useEffect(() => {
         if (window.location.hash) {
             const { access_token, expires_in, token_type } =
@@ -47,13 +43,8 @@ export default function WebPlayer() {
         window.location = `${authEndpoint}?client_id=${clientID}&redirect_uri=${redirect}&scope=${scopesJoined}&response_type=token&show_dialog=true`;
     }
     return (
-        <div className="ontdekken">
-            <h1>Test</h1>
-            <p>fhsjkdhfksjahkjhfkjhkj</p>
-            <button onClick={handleLogin}>Login bij Spotify</button>
-            <GetPlaylist />
-            <SearchSpotifyArtist />
-            <Ontdekken />
+        <div>
+             <button onClick={handleLogin}>Login bij Spotify</button>
         </div>
     )
 }
