@@ -1,0 +1,51 @@
+.highlightOption {
+    background: none;
+    color: #E9C46A;
+}
+
+.multiSelectContainer {
+    color: #E9C46A;
+    border-color: black;
+    border-radius: "5px";
+    width: 50%;
+}
+
+.multiSelectContainer li:hover {
+    background: #264653;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chip {
+    background-color: #264653;
+}
+
+.searchBox {
+    border: none;
+    border-radius: 5px;
+    color: #E9C46A;
+}
+
+.optionContainer {
+    background: black;
+}
+
+.multiSelectContainer li {
+    display: flex;
+}
+
+
+/*multiselectContainer: {*/
+/*    color: '#E9C46A',*/
+/*    width: "50%",*/
+/*    borderColor: "black",*/
+/*    borderRadius: "5px"*/
+/*},*/
+/*searchBox: {*/
+/*    border: 'none',*/
+/*    borderRadius: '5px',*/
+/*    background: "white"*/
+/*},*/
+/*optionContainer: {*/
+/*    background: "black"*/

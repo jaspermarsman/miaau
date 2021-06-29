@@ -9,7 +9,6 @@ export default function SignUpForm() {
     const history = useHistory();
     const auth = useAuth();
 
-    //functie hieronder aanpassen naar catch get?
     function onFormSubmit(data) {
         auth.signup({
             email: data.email,
@@ -20,19 +19,6 @@ export default function SignUpForm() {
 
     }
 
-    // async function onFormSubmit(data) {
-    //
-    //     try {
-    //         // setLoading(true);
-    //         const response = await axios.post(firebase.auth().createUserWithEmailAndPassword(data.email, data.password));
-    //         console.log(response);
-    //
-    //     } catch (error) {
-    //         console.log("OH NO", error);
-    //     }
-    //     reset({email: "", password: "", });
-    //
-    // }
 
     return(
         <div className="container">

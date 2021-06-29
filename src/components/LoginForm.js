@@ -14,7 +14,7 @@ const LoginForm = () => {
         auth.signin({
             email: data.email,
             password: data.password,
-            callback: () => history.push("/Zoeken"),
+            callback: () => history.push("/Ontdekken"),
         })
     }
 

@@ -1,11 +1,16 @@
-import React, {useState, useContext} from "react";
+import React from "react";
 import CountrySelect from "../components/CountrySelect"
+import SpotifyConnect from "../components/SpotifyConnect";
+import CountrySelect2 from "../components/CountrySelect2";
 
 export default function Ontdekken() {
 
-    return(
+    return (
         <div>
-            <CountrySelect />
+            {localStorage.getItem("accessToken") ? (
+                <CountrySelect/>) : (
+                <SpotifyConnect/>
+            )}
         </div>
     );
 };

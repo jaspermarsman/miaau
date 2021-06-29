@@ -23,7 +23,7 @@ export function NavigationBar () {
                                     <li>Inloggen</li>
                                 </NavLink>
                                 <NavLink to="/Signup" activeClassName="active-link">
-                                    <li>Registreer</li>
+                                    <li>Aanmelden</li>
                                 </NavLink> </>)}
 
                         <li>Help</li>

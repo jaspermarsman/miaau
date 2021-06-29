@@ -1,8 +1,9 @@
-import React, {useEffect} from "react";
-// import "./Ontdekken.css"
+import React, {useContext, useEffect} from "react";
 import GetPlaylist from "../components/GetPlaylist";
-import SearchSpotifyArtist from "../components/SearchSpotifyArtist";
 import Ontdekken from "./Ontdekken";
+import { selectedOptionsContext} from "../context/SelectedOptionsProvider";
+
+
 
 // hier helper functie van maken
 const clientID = "d4cc4c212e104c4bbfc05f6ac95e9bc1";
@@ -29,7 +30,12 @@ const getReturnedParamsFromSpotifyAuth = (hash) => {
     return paramsSplitUp;
 };
 
+
+
 export default function WebPlayer() {
+    const {selectedCountries, setSelectedCountries} = useContext(selectedOptionsContext);
+    console.log("pagina webplayer: ", selectedCountries);
+
     useEffect(() => {
         if (window.location.hash) {
             const { access_token, expires_in, token_type } =
@@ -52,7 +58,7 @@ export default function WebPlayer() {
             <p>fhsjkdhfksjahkjhfkjhkj</p>
             <button onClick={handleLogin}>Login bij Spotify</button>
             <GetPlaylist />
-            <SearchSpotifyArtist />
+
             <Ontdekken />
         </div>
     )

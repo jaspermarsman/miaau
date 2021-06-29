@@ -1,10 +1,9 @@
 import React, {createContext, useState} from "react";
-import countries from  "../data/countries.json"
 
 export const selectedOptionsContext = createContext({})
 
 export default function SelectedOptionsProvider({children}) {
-    const [selectedCountries, setSelectedCountries] = useState(countries);
+    const [selectedCountries, setSelectedCountries] = useState(null);
 
     return (
         <selectedOptionsContext.Provider
