@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react";
-import "./SignUp.css"
+import "./SignUpForm.css"
 import { useForm } from 'react-hook-form';
-import {useAuth} from "../context/AuthContext";
+import {useAuth} from "../../context/AuthContext";
 import {useHistory} from "react-router-dom";
 
 export default function SignUpForm() {

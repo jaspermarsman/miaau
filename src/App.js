@@ -1,6 +1,5 @@
-import './App.css';
-import {NavigationBar} from "./components/NavigationBar";
-import {Hero} from "./components/Hero";
+import {NavigationBar} from "./components/NavigationBar/NavigationBar";
+import {Hero} from "./components/Hero/Hero";
 import {
     BrowserRouter as Router,
     Switch,
@@ -18,7 +17,12 @@ import {useAuth} from "./context/AuthContext";
 function App() {
     const { isLoading } = useAuth();
     return isLoading ? (
-        <h1>laden, vervang door svg</h1>
+        <div className="centre">
+            <div className="note one"></div>
+            <div className="note two"></div>
+            <div className="note three"></div>
+            <p>Loading...</p>
+        </div>
     ) : (
         <Router>
             <NavigationBar/>

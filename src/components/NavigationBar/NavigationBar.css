@@ -1,3 +1,11 @@
+@media only screen and (max-width: 576px) {
+    .navigation-bar {
+        position: fixed;
+        bottom: 0;
+
+    }
+}
+
 
 .navigation-bar {
     display: flex;

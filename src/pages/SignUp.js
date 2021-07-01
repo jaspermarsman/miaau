@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.css"
-import "../components/SignUpForm"
-import SignUpForm from "../components/SignUpForm";
+import "../components/Forms/SignUpForm"
+import SignUpForm from "../components/Forms/SignUpForm";
 
 function SignUp() {
     return (

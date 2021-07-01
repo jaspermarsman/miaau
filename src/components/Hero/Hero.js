@@ -1,5 +1,5 @@
 import React from "react";
-import heelal from "../assets/heelal.jpg"
+import heelal from "../../assets/heelal.jpg"
 import "./Hero.css"
 
 export function Hero() {

@@ -1,7 +1,7 @@
 import React, {useEffect, useContext, useState} from "react";
 import "./CountrySelect2.css"
-import { selectedOptionsContext} from "../context/SelectedOptionsProvider";
-import countries from  "../data/countries.json"
+import { selectedOptionsContext} from "../../context/SelectedOptionsProvider";
+import countries from "../../data/countries.json"
 import Select from 'react-select'
 import { useForm, Controller } from 'react-hook-form';
 
@@ -25,13 +25,14 @@ export default function CountrySelect2() {
                     control = {methods.control}
                     {...register("country-list")}
                     render={({
-                        field: { onChange, value, }
+                        field: { onChange, value}
                              }) => (
                         <Select
                             isMulti
                             options = {countries}
                             getOptionValue = {(option) => option.name}
                             getOptionLabel = {(option) => option.name}
+                            {...register("country-list2")}
                             />
                     )}
                     />

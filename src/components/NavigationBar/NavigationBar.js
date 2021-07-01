@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./NavigationBar.css"
-import { useAuth} from "../context/AuthContext";
+import { useAuth} from "../../context/AuthContext";
 
 export function NavigationBar () {
     const auth = useAuth();
@@ -27,7 +27,7 @@ export function NavigationBar () {
                                 </NavLink> </>)}
 
                         <li>Help</li>
-                        <Link>
+                        <Link to="/Signout">
                             <li onClick={() => auth.signout()}>Uitloggen</li>
                         </Link>
 

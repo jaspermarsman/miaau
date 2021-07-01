@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.css"
-import "../components/SignUpForm"
-import LoginForm from "../components/LoginForm";
+import "../components/Forms/SignUpForm"
+import LoginForm from "../components/Forms/LoginForm";
 import {useHistory} from "react-router-dom";
 
 function Login() {
