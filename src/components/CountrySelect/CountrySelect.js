@@ -9,9 +9,10 @@ export default function CountrySelect() {
     const {selectedCountries, setSelectedCountries} = useContext(selectedOptionsContext);
 
     function onSelect(e) {
-        console.log(e.[0].alpha2);
+        // console.log(e.[0].alpha2);
         // setSelectedCountries(e.[0].name);
-        // console.log("onSelect: ",selectedCountries);
+        setSelectedCountries(e);
+        console.log("onSelect: ",selectedCountries);
     }
 
     function onRemove(e) {

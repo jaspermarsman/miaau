@@ -9,6 +9,7 @@ export default function GenreSelect() {
 
     function onSelect(e) {
         console.log(e);
+        setSelectedGenres(e);
         // setSelectedGenres(e.[0].value);
         // console.log("onSelect: ",selectedGenres);
     }
