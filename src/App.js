@@ -10,8 +10,8 @@ import Ontdekken from "./pages/Ontdekken";
 import SignUp from "./pages/SignUp";
 import WebPlayer from "./pages/WebPlayer";
 import PrivateRoute from "./components/PrivateRoute";
-
 import {useAuth} from "./context/AuthContext";
+import ArtistList from "./pages/Artists";
 
 
 function App() {
@@ -39,6 +39,9 @@ function App() {
                 </Route>
                 <Route path="/WebPlayer">
                     <WebPlayer/>
+                </Route>
+                <Route path="/Artist-page">
+                    <ArtistList />
                 </Route>
             </Switch>
         </Router>

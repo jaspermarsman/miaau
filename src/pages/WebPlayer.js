@@ -3,8 +3,6 @@ import GetPlaylist from "../components/GetPlaylist";
 import Ontdekken from "./Ontdekken";
 import { selectedOptionsContext} from "../context/SelectedOptionsProvider";
 
-
-
 // hier helper functie van maken
 const clientID = "d4cc4c212e104c4bbfc05f6ac95e9bc1";
 const authEndpoint = "https://accounts.spotify.com/authorize";

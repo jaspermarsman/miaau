@@ -1,23 +1,18 @@
-import React, {useEffect, useContext, useState} from "react";
+import React, { useContext } from "react";
 import Multiselect from 'multiselect-react-dropdown';
-import { selectedOptionsContext} from "../../context/SelectedOptionsProvider";
+import { useOptionContext } from "../../context/SelectedOptionsProvider"
 import "./CountrySelect.css"
-import SearchMusicBrainz from "../SearchMusicBrainz";
 import countries from "../../data/countries.json"
 
 export default function CountrySelect() {
-    const {selectedCountries, setSelectedCountries} = useContext(selectedOptionsContext);
+    const { selectedCountries, setSelectedCountries } = useOptionContext();
 
     function onSelect(e) {
-        // console.log(e.[0].alpha2);
-        // setSelectedCountries(e.[0].name);
-        setSelectedCountries(e);
-        console.log("onSelect: ",selectedCountries);
+        setSelectedCountries(e.[0].alpha2);
     }
 
     function onRemove(e) {
-        setSelectedCountries(e);
-        console.log("onRemove", selectedCountries);
+        setSelectedCountries(null);
     }
 
     // useEffect(() => {
@@ -28,14 +23,16 @@ export default function CountrySelect() {
 
     return (
         <div className="login">
+            <h2>Kies je bestemming: </h2>
             <Multiselect
                 options={countries}
                 displayValue="name"
                 showCheckbox={true}
                 onSelect={onSelect}
                 onRemove={onRemove}
+                selectionLimit={1}
+                // showArrow={true}
             />
-            <SearchMusicBrainz />
 
         </div>
     );

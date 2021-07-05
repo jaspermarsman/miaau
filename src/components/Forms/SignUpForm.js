@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React from "react";
 import "./SignUpForm.css"
 import { useForm } from 'react-hook-form';
 import {useAuth} from "../../context/AuthContext";

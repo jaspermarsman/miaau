@@ -35,17 +35,6 @@
     display: flex;
 }
 
-
-/*multiselectContainer: {*/
-/*    color: '#E9C46A',*/
-/*    width: "50%",*/
-/*    borderColor: "black",*/
-/*    borderRadius: "5px"*/
-/*},*/
-/*searchBox: {*/
-/*    border: 'none',*/
-/*    borderRadius: '5px',*/
-/*    background: "white"*/
-/*},*/
-/*optionContainer: {*/
-/*    background: "black"*/
+.icon_cancel icon_down_dir {
+    fill: white;
+}

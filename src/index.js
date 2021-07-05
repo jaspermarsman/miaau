@@ -10,13 +10,15 @@ import SelectedOptionsProvider from "./context/SelectedOptionsProvider";
 
 ReactDOM.render(
     <React.StrictMode>
+        <SelectedOptionsProvider>
         <FirebaseContext.Provider value={{firebase}}>
             <ProvideAuth>
-                <SelectedOptionsProvider>
+
                 <App/>
-                </SelectedOptionsProvider>
+
             </ProvideAuth>
         </FirebaseContext.Provider>
+        </SelectedOptionsProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );

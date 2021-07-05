@@ -4,19 +4,34 @@
     margin: 0px;
 }
 
-@media only screen and (max-width: 576px) {
-
-    h1, h2 {
-        color: red;
-    }
+@media screen and (max-width 990px) {
+h1, h2 {
+    color: red;
 }
+
+body {
+    background-color: white;
+}
+
+}
+
+/*@media only screen and (max-width: 576px) {*/
+
+/*    h1, h2 {*/
+/*        color: red;*/
+/*    }*/
+
+/*    body {*/
+/*        background-color: white;*/
+/*    }*/
+/*}*/
 
 body {
     display: flex;
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
-    background-color: black;
+    background-color: white;
 }
 
 h1, h2 {
