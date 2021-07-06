@@ -1,0 +1,28 @@
+@media only screen and (max-width: 576px) {
+
+    .general {
+        display: flex;
+        flex-direction: revert;
+    }
+
+    h1, h2 {
+        color: red;
+    }
+}
+
+
+.general {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+

@@ -11,7 +11,7 @@ export function NavigationBar () {
                 <nav>
                     <ul>
                         {auth.user ? (<>
-                            <NavLink to="/Ontdekken" activeClassName="active-link">
+                            <NavLink to="/" exact activeClassName="active-link">
                                 <li>Ontdekken</li>
                             </NavLink>
                             <NavLink to="/WebPlayer" activeClassName="active-link">

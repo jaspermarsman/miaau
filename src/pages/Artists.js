@@ -2,12 +2,15 @@ import React, {useEffect, useState } from "react";
 import { useOptionContext} from "../context/SelectedOptionsProvider";
 import Multiselect from 'multiselect-react-dropdown';
 import axios from "axios";
-import ArtistInfo from "../components/ArtistInfo";
+import GetArtistInfo from "../components/GetArtistInfo";
+import {useHistory} from "react-router-dom";
 
 export default function ArtistList() {
-    const { searchResults, selectedArtist, setSelectedArtist, selectedCountries, setArtistRelations } = useOptionContext();
+    const { searchResults, selectedArtist, setSelectedArtist, selectedCountries, setArtistRelations,selectedGenres, countryName } = useOptionContext();
     const [ search, setSearch ] = useState(false);
     const [ artistID, setArtistID ] = useState("");
+    let history = useHistory();
+
 
     useEffect(() => {
         const searchArtistID = selectedArtist.replaceAll(" ", "%20");
@@ -44,38 +47,36 @@ useEffect(() => {
 }, [search])
 
 
-    function clickHandler() {
-        console.log(searchResults);
-    }
-
     function onSelect(e) {
         setSelectedArtist(e.[0].name);
     }
 
     function onRemove(e) {
-
-        // setSelectedArtist(null);
-        // console.log("onRemove", selectedArtist);
+        setSelectedArtist(null);
     }
 
     return (
-        <div className="login">{ searchResults ? (
-            <Multiselect
+        <div className="login">{ searchResults  ? (
+              <Multiselect
                 options={searchResults}
                 displayValue="name"
                 showCheckbox={true}
                 onSelect={onSelect}
                 onRemove={onRemove}
                 selectionLimit={1}
-                // showArrow={true}
+                showArrow={true}
+                emptyRecordMsg="Helaas, geen artiesten gevonden"
             />
         ) : (
-            <p>Nee</p>
+            <div>
+            <p>Helaas, in {countryName} zijn geen artiesten gevonden in het genre: {selectedGenres} </p>
+                <button onClick={() => history.push("/") }>Maak een nieuwe selectie</button>
+
+            </div>
         )
         }
-            <h1>TERLJTKLJLK</h1>
-            <button onClick={() => {setSearch(true)}}>Searchguery</button>
-            <ArtistInfo />
+            <button onClick={() => {setSearch(true)}}>Bevestig</button>
+            <GetArtistInfo />
         </div>
     );
 

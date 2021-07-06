@@ -28,7 +28,7 @@ function App() {
             <NavigationBar/>
             <Hero/>
             <Switch>
-                <PrivateRoute path="/Ontdekken">
+                <PrivateRoute exact path="/">
                     <Ontdekken/>
                 </PrivateRoute>
                 <Route path="/Login">

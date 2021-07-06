@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import "./SignUpForm.css"
+import "./Form.css"
 import { useForm } from 'react-hook-form';
 
 import { useAuth } from "../../context/AuthContext"

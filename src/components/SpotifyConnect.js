@@ -3,7 +3,7 @@ import React, {useEffect} from "react";
 // hier helper functie van maken
 const clientID = "d4cc4c212e104c4bbfc05f6ac95e9bc1";
 const authEndpoint = "https://accounts.spotify.com/authorize";
-const redirect = "http://localhost:3000/Ontdekken/";
+const redirect = "http://localhost:3000/";
 const scopes = [
     "user-read-currently-playing",
     "user-read-playback-state",

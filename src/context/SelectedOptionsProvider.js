@@ -12,6 +12,7 @@ export default function SelectedOptionsProvider({children}) {
     const [searchResults, setSearchResults] = useState(null);
     const [selectedArtist, setSelectedArtist] = useState("");
     const [artistRelations, setArtistRelations] = useState(null)
+    const [countryName, setCountryName] = useState(null);
 
     return (
         <selectedOptionsContext.Provider
@@ -26,6 +27,8 @@ export default function SelectedOptionsProvider({children}) {
                 setSelectedArtist: setSelectedArtist,
                 artistRelations: artistRelations,
                 setArtistRelations: setArtistRelations,
+                countryName: countryName,
+                setCountryName: setCountryName,
             }}
         >
             {children}

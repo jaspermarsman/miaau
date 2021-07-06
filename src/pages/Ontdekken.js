@@ -1,16 +1,17 @@
 import React from "react";
-import CountrySelect from "../components/CountrySelect/CountrySelect"
+import CountrySelect from "../components/DropDowns/CountrySelect"
 import SpotifyConnect from "../components/SpotifyConnect";
-import GenreSelect from "../components/GenreSelect"
+import GenreSelect from "../components/DropDowns/GenreSelect"
 import SearchMusicBrainz from "../components/SearchMusicBrainz";
+import "./PageStyling.css"
 
 
 export default function Ontdekken() {
 
     return (
-        <div>
+        <div className="general">
             {localStorage.getItem("accessToken") ? (
-                <div >
+                <div className="box">
                 <CountrySelect/>
                 <GenreSelect/>
                     <SearchMusicBrainz />

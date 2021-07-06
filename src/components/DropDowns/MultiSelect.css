@@ -7,7 +7,8 @@
     color: #E9C46A;
     border-color: black;
     border-radius: "5px";
-    width: 50%;
+    margin: 10px;
+    width: 400px;
 }
 
 .multiSelectContainer li:hover {
@@ -24,7 +25,13 @@
 .searchBox {
     border: none;
     border-radius: 5px;
-    color: #E9C46A;
+    color: black;
+    font-size: medium;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.searchWrapper{
+    background-color: white;
 }
 
 .optionContainer {
@@ -35,6 +42,7 @@
     display: flex;
 }
 
-.icon_cancel icon_down_dir {
-    fill: white;
+.icon_down_dir {
+    width: 20px;
 }
+
