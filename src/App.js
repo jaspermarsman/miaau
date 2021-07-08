@@ -12,10 +12,14 @@ import WebPlayer from "./pages/WebPlayer";
 import PrivateRoute from "./components/PrivateRoute";
 import {useAuth} from "./context/AuthContext";
 import ArtistList from "./pages/Artists";
+import ArtistInfo from "./pages/ArtistInfo";
+import useMatchMedia from "./components/useMatchMedia";
+import NavigationBarMobile from "./components/NavigationBar/NavigationBarMobile";
 
 
 function App() {
     const { isLoading } = useAuth();
+    const isDesktopResolution = useMatchMedia('(min-width:992px)', true)
     return isLoading ? (
         <div className="centre">
             <div className="note one"></div>
@@ -25,7 +29,11 @@ function App() {
         </div>
     ) : (
         <Router>
-            <NavigationBar/>
+            { isDesktopResolution ? (
+                <NavigationBar />
+                ) : (
+                    <NavigationBarMobile />
+            )}
             <Hero/>
             <Switch>
                 <PrivateRoute exact path="/">
@@ -42,6 +50,9 @@ function App() {
                 </Route>
                 <Route path="/Artist-page">
                     <ArtistList />
+                </Route>
+                <Route path="/Artist-info">
+                    <ArtistInfo />
                 </Route>
             </Switch>
         </Router>

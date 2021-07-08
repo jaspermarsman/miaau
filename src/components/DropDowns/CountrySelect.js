@@ -18,7 +18,7 @@ export default function CountrySelect() {
     }
 
     return (
-        <div className="login">
+        <div>
             { selectedCountries ? (
                 <div>
                 <h2>Gekozen bestemming:</h2>
