@@ -1,0 +1,26 @@
+/*.track-box {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    background-color: red;*/
+
+/*}*/
+
+.artist-box {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    align-items: center;
+}
+
+.all-info {
+    display: flex;
+    margin: 10px 0px 20px 0px;
+}
+
+.h2-popular {
+    padding-bottom: 5px;
+}
+
+.a-popular {
+    font-style: italic;
+}

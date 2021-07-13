@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {useOptionContext} from "../context/SelectedOptionsProvider";
+import "./ArtistOnSpotify.css"
 
 
 export default function ArtistOnSpotify() {
@@ -10,7 +11,7 @@ export default function ArtistOnSpotify() {
     const [artistID, setArtistID] = useState("");
     const [topTracks, setTopTracks] = useState([])
 
-    const {selectedArtist} = useOptionContext();
+    const {selectedArtist, setArtistFoundOnSpotify} = useOptionContext();
 
 
     useEffect(() => {
@@ -31,6 +32,7 @@ export default function ArtistOnSpotify() {
                     console.log(response.data.artists.items.[0].external_urls.spotify);
                     setSpotifyURl(response.data.artists.items.[0].external_urls.spotify);
                     setArtistID(response.data.artists.items.[0].id);
+                    setArtistFoundOnSpotify(true);
 
                 } catch (error) {
                     console.log(error);
@@ -65,19 +67,24 @@ export default function ArtistOnSpotify() {
 
     return (
         <div>
-
+           <div className="all-info">
+            <div className="artist-box">
+            <img src={image} alt={selectedArtist}/>
             <button
                 onClick={() => window.open(spotifyURL, "_blank")}
             >Ontdek in Spotify
             </button>
-            <img src={image} alt={selectedArtist}/>
-            <h2>Populaire nummers</h2>
+            </div>
+            <div className="track-box">
+            <h2 className="h2-popular">Populaire nummers</h2>
 
             {topTracks.map((topTrack) => {
-                return <div><a href={topTrack.external_urls.spotify} target="blank">{topTrack.name}</a></div>
+                return <div><a href={topTrack.external_urls.spotify} target="blank" className="a-popular">{topTrack.name}</a></div>
             })
 
             }
+            </div>
+           </div>
 
         </div>
     )

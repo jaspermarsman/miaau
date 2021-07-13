@@ -7,6 +7,7 @@ export default function ArtistInfo() {
     const {
         selectedArtist,
         artistRelations,
+        artistFoundOnSpotify,
     } = useOptionContext();
     console.log(artistRelations);
 
@@ -14,14 +15,21 @@ export default function ArtistInfo() {
     return (
         <div className="general">
             <h1>{selectedArtist}</h1>
-            <ArtistOnSpotify/>
-            <p>Ontdek meer over deze artiest met onderstaande bronnen:</p>
+            { artistFoundOnSpotify ? (
+                <ArtistOnSpotify/> ) :(
+                    <div>
+                    <p>Helaas, {selectedArtist} is niet gevonden op Spotify!</p>
+                        <p>Ontdek meer over deze artiest met onderstaande bronnen:</p>
 
-            {artistRelations.map((artistRelation) => {
-                return <div><a href={artistRelation.url.resource} target="_blank">{artistRelation.type}</a></div>
-            })
+                        {artistRelations.map((artistRelation) => {
+                            return <div><a href={artistRelation.url.resource} target="_blank">{artistRelation.type}</a></div>
+                        })
 
-            }
+                        }
+                    </div>
+                    )}
+
+
 
 
         </div>
