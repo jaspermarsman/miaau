@@ -6,6 +6,8 @@ import { RiHomeSmile2Line, RiHomeSmile2Fill, RiUser5Fill, RiSearchEyeFill } from
 import { BiSearchAlt } from 'react-icons/bi'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import { RiUser5Line } from 'react-icons/ri'
+import { GiHamburgerMenu } from "react-icons/gi"
+import { ImArrowLeft2 } from "react-icons/im"
 
 const BottomNavBar = props => {
     const history = useHistory()
@@ -34,17 +36,11 @@ const BottomNavBar = props => {
     return (
         <div className='bottom-nav'>
             <div className='bn-tab'>
-                {activeTabs === 'home' ?
-                    <RiHomeSmile2Fill
+                    <GiHamburgerMenu
                         size='35'
                         color='#E9C46A'
                         onClick={() => setActiveTabs('home')}
-                    /> :
-                    <RiHomeSmile2Line
-                        size='35'
-                        color='#E9C46A'
-                        onClick={() => setActiveTabs('home')}
-                    />}
+                    />
             </div>
             <div className='bn-tab'>
                 {activeTabs === 'search' ?
@@ -60,30 +56,11 @@ const BottomNavBar = props => {
                     />}
             </div>
             <div className='bn-tab'>
-                {activeTabs === 'favourites' ?
-                    <AiFillHeart
+                    <ImArrowLeft2
                         size='35'
                         color='#E9C46A'
                         onClick={() => setActiveTabs('favourites')}
-                    /> :
-                    <AiOutlineHeart
-                        size='35'
-                        color='#E9C46A'
-                        onClick={() => setActiveTabs('favourites')}
-                    />}
-            </div>
-            <div className='bn-tab'>
-                {activeTabs === 'account' ?
-                    <RiUser5Fill
-                        size='35'
-                        color='#E9C46A'
-                        onClick={() => setActiveTabs('account')}
-                    /> :
-                    <RiUser5Line
-                        size='35'
-                        color='#E9C46A'
-                        onClick={() => setActiveTabs('account')}
-                    />}
+                    />
             </div>
         </div>
     )

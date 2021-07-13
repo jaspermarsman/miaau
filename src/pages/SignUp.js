@@ -1,14 +1,13 @@
 import React from "react";
-import "./Login.css"
+import "./FormPageStyling.css"
 import "../components/Forms/SignUpForm"
 import SignUpForm from "../components/Forms/SignUpForm";
+import PayOff from "../components/PayOff";
 
 function SignUp() {
     return (
-        <div className={"login"}>
-            <h1>MIAAU</h1>
-            <h2>Music Is All Around Us</h2>
-            <p>Ontdek de wereld om je heen door te luisteren naar muzikanten wereldwijd.</p>
+        <div className="form">
+            <PayOff />
             <SignUpForm />
         </div>
     )

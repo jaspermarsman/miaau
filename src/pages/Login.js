@@ -1,8 +1,9 @@
 import React from "react";
-import "./Login.css"
+import "./FormPageStyling.css"
 import "../components/Forms/SignUpForm"
 import LoginForm from "../components/Forms/LoginForm";
 import {useHistory} from "react-router-dom";
+import PayOff from "../components/PayOff";
 
 function Login() {
     const history = useHistory();
@@ -12,17 +13,16 @@ function Login() {
     }
 
     return (
-        <div className={"login"}>
-            <h1>MIAAU</h1>
-            <h2>Music Is All Around Us</h2>
-            <p>Ontdek de wereld om je heen door te luisteren naar muzikanten wereldwijd.</p>
-
-            <LoginForm />
-            <p>Heb je nog geen account?</p>
-            <button
-                onClick={handleClick}
-            >Meld je aan bij MIAAU</button>
-
+        <div className={"form"}>
+            <PayOff />
+            <LoginForm/>
+            <div className="subscribe-container">
+                <p>Heb je nog geen account?</p>
+                <button
+                    onClick={handleClick}
+                >Account maken
+                </button>
+            </div>
         </div>
     )
 }

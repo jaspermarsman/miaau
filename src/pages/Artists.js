@@ -61,7 +61,7 @@ export default function ArtistList() {
     return (
         <div className="general">
             {searchResults ? (
-                <div>
+                <div className="confirm-box">
                 <ArtistSelect/>
                 <button onClick={() => {
                     setSearch(true)

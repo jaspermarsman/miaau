@@ -34,6 +34,7 @@ export default function GenreSelect() {
         <div className="login">
             { selectedGenres ? (
                 <div>
+                    <div className="confirm-box">
                 <h2>Gekozen genre:</h2>
                 <label className="input-label"> {selectedGenres}
                     <input
@@ -43,6 +44,7 @@ export default function GenreSelect() {
                         onChange={() => {setSelectedGenres(null)}}
                         />
                 </label>
+                    </div>
                 </div>
             ) : (
                 <div>

@@ -13,7 +13,7 @@ const PrivateRoute = ({ children, ...rest }) => {
                 ) : (
                     <Redirect
                         to={{
-                            pathname: "/Signup",
+                            pathname: "/Login",
                             state: { from: location }
                         }}
                     />

@@ -19,10 +19,13 @@
 
 }
 
-.box {
+.genre-country-box {
+    min-height: 300px;
+    flex-wrap: wrap;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 

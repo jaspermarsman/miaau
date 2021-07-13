@@ -21,6 +21,7 @@ export default function CountrySelect() {
         <div>
             { selectedCountries ? (
                 <div>
+                    <div className="confirm-box">
                 <h2>Gekozen bestemming:</h2>
                     <label className="input-label"> {countryName}
                     <input
@@ -31,7 +32,7 @@ export default function CountrySelect() {
                         onChange={() => {setSelectedCountries(null)}}
                         />
                     </label>
-
+                    </div>
                 </div>
                 ) : (
                 <div>

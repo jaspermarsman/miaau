@@ -25,7 +25,7 @@ function App() {
             <div className="note one"></div>
             <div className="note two"></div>
             <div className="note three"></div>
-            <p>Loading...</p>
+            <p>Laden...</p>
         </div>
     ) : (
         <Router>

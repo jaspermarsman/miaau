@@ -25,11 +25,12 @@ p {
 }
 
 button {
-    width: 50%;
+    width: 80%;
     margin: 10px;
     background-color: #F4A261;
     color: #264653;
     border-radius: 18px;
+    padding: 3px;
 }
 
 /*Muziek Spinner*/

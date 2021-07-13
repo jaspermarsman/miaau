@@ -33,6 +33,8 @@ export default function SearchMusicBrainz() {
 
 
     return (
-        <button onClick={() => setSearch(true)}>MusicBrainz</button>
+        <div className="general">
+        <button onClick={() => setSearch(true)}>Ontdek artiesten</button>
+        </div>
     )
 }

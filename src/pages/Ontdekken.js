@@ -11,14 +11,17 @@ export default function Ontdekken() {
     return (
         <div className="general">
             {localStorage.getItem("accessToken") ? (
-                <div className="box">
+                <div>
+                <div className="genre-country-box">
                 <CountrySelect/>
                 <GenreSelect/>
+
+                </div>
                     <SearchMusicBrainz />
                 </div>) : (
                     <div>
                         <p>Log in met je premium Spotify account: </p>
-                        <SpotifyConnect/>
+                        <SpotifyConnect />
                     </div>
 
             )}

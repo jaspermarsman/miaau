@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { useAuth } from "../../context/AuthContext"
 
 const LoginForm = () => {
-    const { handleSubmit, formState: { errors }, register, reset } = useForm();
+    const { handleSubmit, formState: { errors }, register } = useForm();
     const auth = useAuth();
     let history = useHistory();
 
@@ -14,7 +14,7 @@ const LoginForm = () => {
         auth.signin({
             email: data.email,
             password: data.password,
-            callback: () => history.push("/Ontdekken"),
+            callback: () => history.push("/"),
         })
     }
 
