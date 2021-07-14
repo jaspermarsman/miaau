@@ -11,7 +11,7 @@ export default function ArtistOnSpotify() {
     const [artistID, setArtistID] = useState("");
     const [topTracks, setTopTracks] = useState([])
 
-    const {selectedArtist, setArtistFoundOnSpotify} = useOptionContext();
+    const {selectedArtist} = useOptionContext();
 
 
     useEffect(() => {
@@ -32,7 +32,7 @@ export default function ArtistOnSpotify() {
                     console.log(response.data.artists.items.[0].external_urls.spotify);
                     setSpotifyURl(response.data.artists.items.[0].external_urls.spotify);
                     setArtistID(response.data.artists.items.[0].id);
-                    setArtistFoundOnSpotify(true);
+
 
                 } catch (error) {
                     console.log(error);

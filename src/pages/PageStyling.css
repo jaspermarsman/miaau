@@ -1,14 +1,14 @@
-@media only screen and (max-width: 576px) {
+/*@media only screen and (max-width: 576px) {*/
 
-    .general {
-        display: flex;
-        flex-direction: revert;
-    }
+/*    .general {*/
+/*        display: flex;*/
+/*        flex-direction: revert;*/
+/*    }*/
 
-    h1, h2 {
-        color: red;
-    }
-}
+/*    h1, h2 {*/
+/*        color: red;*/
+/*    }*/
+/*}*/
 
 
 .general {
@@ -26,6 +26,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+.external-sources {
+    margin-top: 20px;
+    color: white;
 }
 
 

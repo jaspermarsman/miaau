@@ -14,12 +14,6 @@ export function NavigationBar () {
                             <NavLink to="/" exact activeClassName="active-link">
                                 <li>Ontdekken</li>
                             </NavLink>
-                            <NavLink to="/WebPlayer" activeClassName="active-link">
-                                <li>Web-Player</li>
-                            </NavLink>
-                            <NavLink to="/Artist-page" activeClassName="active=link">
-                                <li>Artiestenpagina</li>
-                            </NavLink>
                         </>) : (
                             <>
                                 <NavLink to="/Login" activeClassName="active-link">

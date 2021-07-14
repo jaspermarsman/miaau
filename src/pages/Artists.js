@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {useOptionContext} from "../context/SelectedOptionsProvider";
 import axios from "axios";
-import GetArtistInfo from "../components/GetArtistInfo";
 import {useHistory} from "react-router-dom";
 import ArtistSelect from "../components/DropDowns/ArtistSelect";
 import "./PageStyling.css"
-import ArtistInfo from "./ArtistInfo";
 
 export default function ArtistList() {
     const {
