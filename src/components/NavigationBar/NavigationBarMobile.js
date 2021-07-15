@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import "./NavigationBarMobile.css"
-
 import { RiHomeSmile2Line, RiHomeSmile2Fill, RiUser5Fill, RiSearchEyeFill } from 'react-icons/ri'
 import { BiSearchAlt } from 'react-icons/bi'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import { RiUser5Line } from 'react-icons/ri'
 import { GiHamburgerMenu } from "react-icons/gi"
 import { ImArrowLeft2 } from "react-icons/im"
+import {useOptionContext} from "../../context/SelectedOptionsProvider";
 
 const BottomNavBar = props => {
-    const history = useHistory()
-    const [activeTabs, setActiveTabs] = useState()
-    console.log(props);
+    const history = useHistory();
+    const [activeTabs, setActiveTabs] = useState();
+    const {showMenu, setShowMenu} = useOptionContext();
+
     useEffect(() => {
         switch (activeTabs) {
             case 'home':
@@ -39,7 +40,7 @@ const BottomNavBar = props => {
                     <GiHamburgerMenu
                         size='35'
                         color='#E9C46A'
-                        onClick={() => setActiveTabs('home')}
+                        onClick={() => setShowMenu(!showMenu)}
                     />
             </div>
             <div className='bn-tab'>

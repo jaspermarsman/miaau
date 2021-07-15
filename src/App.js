@@ -1,5 +1,6 @@
 import {NavigationBar} from "./components/NavigationBar/NavigationBar";
 import {Hero} from "./components/Hero/Hero";
+import {useOptionContext} from "./context/SelectedOptionsProvider";
 import {
     BrowserRouter as Router,
     Switch,
@@ -14,11 +15,14 @@ import ArtistList from "./pages/Artists";
 import ArtistInfo from "./pages/ArtistInfo";
 import useMatchMedia from "./components/useMatchMedia";
 import NavigationBarMobile from "./components/NavigationBar/NavigationBarMobile";
+import SideMenu from "../src/components/NavigationBar/SideMenu"
 
 
 function App() {
     const { isLoading } = useAuth();
     const isDesktopResolution = useMatchMedia('(min-width:992px)', true)
+    const {showMenu} = useOptionContext();
+
     return isLoading ? (
         <div className="centre">
             <div className="note one"></div>
@@ -34,6 +38,9 @@ function App() {
                     <NavigationBarMobile />
             )}
             <Hero/>
+            { showMenu &&
+                <SideMenu />
+             }
             <Switch>
                 <PrivateRoute exact path="/">
                     <Ontdekken/>
