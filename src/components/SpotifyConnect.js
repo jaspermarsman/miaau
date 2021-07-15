@@ -1,8 +1,9 @@
 import React, {useEffect} from "react";
+import getReturnedParamsFromSpotifyAuth from "../helpers/getReturnedParamsFromSpotifyAuth";
 
-// hier helper functie van maken
-// const clientID = "d4cc4c212e104c4bbfc05f6ac95e9bc1";
-const clientID = process.env.REACT_APP_API_SPOTIFY_CLIENT_ID;
+
+const clientID = "d4cc4c212e104c4bbfc05f6ac95e9bc1";
+// const clientID = process.env.REACT_APP_API_SPOTIFY_CLIENT_ID;
 const authEndpoint = "https://accounts.spotify.com/authorize";
 const redirect = "http://localhost:3000/";
 const scopes = [
@@ -12,19 +13,6 @@ const scopes = [
     "user-read-private",
 ];
 const scopesJoined = scopes.join("%20");
-
-//helperfunctie maken:
-const getReturnedParamsFromSpotifyAuth = (hash) => {
-    const stringAfterHashtag = hash.substring(1);
-    const paramsInUrl = stringAfterHashtag.split("&");
-    const paramsSplitUp = paramsInUrl.reduce((accumulater, currentValue) => {
-        const [key, value] = currentValue.split("=");
-        accumulater[key] = value;
-        return accumulater;
-    }, {});
-
-    return paramsSplitUp;
-};
 
 export default function SpotifyConnect() {
     useEffect(() => {
