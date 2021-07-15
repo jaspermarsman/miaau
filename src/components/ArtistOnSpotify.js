@@ -27,9 +27,7 @@ export default function ArtistOnSpotify() {
 
                         },
                     })
-                    console.log(response.data);
                     setImage(response.data.artists.items.[0].images.[1].url);
-                    console.log(response.data.artists.items.[0].external_urls.spotify);
                     setSpotifyURl(response.data.artists.items.[0].external_urls.spotify);
                     setArtistID(response.data.artists.items.[0].id);
 

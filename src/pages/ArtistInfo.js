@@ -12,8 +12,9 @@ export default function ArtistInfo() {
         setArtistFoundOnSpotify,
     } = useOptionContext();
     const [token, setToken] = useState("");
-    console.log(artistFoundOnSpotify);
 
+
+    console.log(token);
 
     useEffect(() => {
         if (localStorage.getItem("accessToken")) {
@@ -37,7 +38,7 @@ export default function ArtistInfo() {
             };
             checkSpotify();
         }
-    }, []);
+    }, [token]);
 
 
     return (
@@ -50,7 +51,7 @@ export default function ArtistInfo() {
                         <p>Ontdek meer over deze artiest met onderstaande bronnen:</p>
                         <div className="external-sources">
                         <ol>
-                        {artistRelations.map((artistRelation) => {
+                        { artistRelations && artistRelations.map((artistRelation) => {
                             return <div>
                                 <li className="external-sources"><a href={artistRelation.url.resource} target="_blank">{artistRelation.type}</a></li>
                                 </div>
@@ -61,10 +62,6 @@ export default function ArtistInfo() {
                         </div>
                     </div>
                     )}
-
-
-
-
         </div>
     )
 }

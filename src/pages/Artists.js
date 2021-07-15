@@ -20,9 +20,8 @@ export default function ArtistList() {
 
 
     useEffect(() => {
-        const searchArtistID = selectedArtist.replaceAll(" ", "%20");
-
         if (selectedArtist) {
+            const searchArtistID = selectedArtist.replaceAll(" ", "%20");
             async function fetchData() {
                 try {
                     const result = await axios.get(`https://musicbrainz.org/ws/2/artist/?query=${searchArtistID}+AND+country:${selectedCountries}&fmt=json`);
