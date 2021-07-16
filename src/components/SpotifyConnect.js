@@ -2,22 +2,21 @@ import React, {useEffect} from "react";
 import getReturnedParamsFromSpotifyAuth from "../helpers/getReturnedParamsFromSpotifyAuth";
 
 
-const clientID = "d4cc4c212e104c4bbfc05f6ac95e9bc1";
-// const clientID = process.env.REACT_APP_API_SPOTIFY_CLIENT_ID;
-const authEndpoint = "https://accounts.spotify.com/authorize";
-const redirect = "http://localhost:3000/";
-const scopes = [
-    "user-read-currently-playing",
-    "user-read-playback-state",
-    "playlist-read-private",
-    "user-read-private",
-];
-const scopesJoined = scopes.join("%20");
+
 
 export default function SpotifyConnect() {
+    const clientID = process.env.REACT_APP_API_SPOTIFY_CLIENT_ID;
+    const authEndpoint = "https://accounts.spotify.com/authorize";
+    const redirect = "http://localhost:3000/";
+    const scopes = [
+        "user-read-private",
+    ];
+    const scopesJoined = scopes.join("%20");
+
+
     useEffect(() => {
         if (window.location.hash) {
-            const { access_token, expires_in, token_type } =
+            const {access_token, expires_in, token_type} =
                 getReturnedParamsFromSpotifyAuth(window.location.hash);
 
             localStorage.clear();
@@ -33,7 +32,7 @@ export default function SpotifyConnect() {
     }
     return (
         <div>
-             <button onClick={handleLogin}>Login bij Spotify</button>
+            <button onClick={handleLogin}>Login bij Spotify</button>
         </div>
     )
 }

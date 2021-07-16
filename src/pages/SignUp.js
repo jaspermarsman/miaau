@@ -7,8 +7,8 @@ import PayOff from "../components/PayOff";
 function SignUp() {
     return (
         <div className="form">
-            <PayOff />
-            <SignUpForm />
+            <PayOff/>
+            <SignUpForm/>
         </div>
     )
 }

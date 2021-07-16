@@ -1,11 +1,11 @@
-import React, {useEffect, useState } from "react";
-import { useOptionContext} from "../../context/SelectedOptionsProvider";
+import React from "react";
+import {useOptionContext} from "../../context/SelectedOptionsProvider";
 import Multiselect from 'multiselect-react-dropdown';
 import "./MultiSelect.css"
 
 
 export default function ArtistSelect() {
-    const { searchResults, selectedArtist, setSelectedArtist, selectedCountries } = useOptionContext();
+    const {searchResults, selectedArtist, setSelectedArtist, selectedCountries} = useOptionContext();
 
     function onSelect(e) {
         setSelectedArtist(e.[0].name);
@@ -17,18 +17,20 @@ export default function ArtistSelect() {
 
     return (
         <div>
-            { selectedArtist ? (
+            {selectedArtist ? (
                 <div>
                     <h2>Gekozen artiest:</h2>
-                <label className="input-label"> {selectedArtist}
-                    <input
-                        className="checkbox"
-                        type="checkbox"
-                        value={selectedArtist}
-                        checked={selectedCountries}
-                        onChange={() => {setSelectedArtist(null)}}
-                    />
-                </label>
+                    <label className="input-label"> {selectedArtist}
+                        <input
+                            className="checkbox"
+                            type="checkbox"
+                            value={selectedArtist}
+                            checked={selectedCountries}
+                            onChange={() => {
+                                setSelectedArtist(null)
+                            }}
+                        />
+                    </label>
                 </div>
             ) : (
                 <div>

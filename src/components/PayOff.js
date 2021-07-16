@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function PayOff() {
-    return(
+    return (
         <div className="intro-container">
             <div className="title">
                 <h1>MIAAU</h1>

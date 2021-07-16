@@ -19,7 +19,7 @@ import SideMenu from "../src/components/NavigationBar/SideMenu"
 
 
 function App() {
-    const { isLoading } = useAuth();
+    const {isLoading} = useAuth();
     const isDesktopResolution = useMatchMedia('(min-width:992px)', true)
     const {showMenu} = useOptionContext();
 
@@ -32,15 +32,15 @@ function App() {
         </div>
     ) : (
         <Router>
-            { isDesktopResolution ? (
-                <NavigationBar />
-                ) : (
-                    <NavigationBarMobile />
+            {isDesktopResolution ? (
+                <NavigationBar/>
+            ) : (
+                <NavigationBarMobile/>
             )}
             <Hero/>
-            { showMenu &&
-                <SideMenu />
-             }
+            {showMenu &&
+            <SideMenu/>
+            }
             <Switch>
                 <PrivateRoute exact path="/">
                     <Ontdekken/>
@@ -52,10 +52,10 @@ function App() {
                     <SignUp/>
                 </Route>
                 <Route path="/Artist-page">
-                    <ArtistList />
+                    <ArtistList/>
                 </Route>
                 <Route path="/Artist-info">
-                    <ArtistInfo />
+                    <ArtistInfo/>
                 </Route>
             </Switch>
         </Router>

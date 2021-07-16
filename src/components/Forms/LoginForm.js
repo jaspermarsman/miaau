@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
+import {useHistory} from "react-router-dom";
 import "./Form.css"
-import { useForm } from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 
-import { useAuth } from "../../context/AuthContext"
+import {useAuth} from "../../context/AuthContext"
 
 const LoginForm = () => {
-    const { handleSubmit, formState: { errors }, register } = useForm();
+    const {handleSubmit, register} = useForm();
     const auth = useAuth();
     let history = useHistory();
 
@@ -21,16 +21,18 @@ const LoginForm = () => {
     return (
         <div className="container">
             <form
-                onSubmit = {handleSubmit(onLoginSubmit)}
+                onSubmit={handleSubmit(onLoginSubmit)}
             >
                 <label>Voer je e-mailadres in:
-                <input
-                    type="email"
-                    placeholder="Email"
-                    {...register("email", {required: true,
-                        pattern: /^\S+@\S+$/i},
-                    )}
-                />
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        {...register("email", {
+                                required: true,
+                                pattern: /^\S+@\S+$/i
+                            },
+                        )}
+                    />
                 </label>
                 <label>
                     Voer je wachtwoord in :

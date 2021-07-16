@@ -39,7 +39,7 @@ export default function ArtistOnSpotify() {
             };
             getArtistOnSpotify();
         }
-    }, [token]);
+    }, [token, selectedArtist]);
 
     useEffect(() => {
         async function getTopTracks() {
@@ -60,29 +60,30 @@ export default function ArtistOnSpotify() {
             ;
         };
         getTopTracks();
-    }, [artistID])
+    }, [artistID, token])
 
 
     return (
         <div>
-           <div className="all-info">
-            <div className="artist-box">
-            <img src={image} alt={selectedArtist}/>
-            <button
-                onClick={() => window.open(spotifyURL, "_blank")}
-            >Ontdek in Spotify
-            </button>
-            </div>
-            <div className="track-box">
-            <h2 className="h2-popular">Populaire nummers</h2>
+            <div className="all-info">
+                <div className="artist-box">
+                    <img src={image} alt={selectedArtist}/>
+                    <button
+                        onClick={() => window.open(spotifyURL, "_blank")}
+                    >Ontdek in Spotify
+                    </button>
+                </div>
+                <div className="track-box">
+                    <h2 className="h2-popular">Populaire nummers</h2>
 
-            {topTracks.map((topTrack) => {
-                return <div><a href={topTrack.external_urls.spotify} target="blank" className="a-popular">{topTrack.name}</a></div>
-            })
+                    {topTracks.map((topTrack) => {
+                        return <div><a href={topTrack.external_urls.spotify} target="blank"
+                                       className="a-popular">{topTrack.name}</a></div>
+                    })
 
-            }
+                    }
+                </div>
             </div>
-           </div>
 
         </div>
     )

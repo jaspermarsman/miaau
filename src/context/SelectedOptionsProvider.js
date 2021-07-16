@@ -34,7 +34,7 @@ export default function SelectedOptionsProvider({children}) {
                 artistFoundOnSpotify: artistFoundOnSpotify,
                 setArtistFoundOnSpotify: setArtistFoundOnSpotify,
                 showMenu: showMenu,
-                setShowMenu, setShowMenu,
+                setShowMenu: setShowMenu,
             }}
         >
             {children}

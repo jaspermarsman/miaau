@@ -14,7 +14,7 @@ function Login() {
 
     return (
         <div className={"form"}>
-            <PayOff />
+            <PayOff/>
             <LoginForm/>
             <div className="subscribe-container">
                 <p>Heb je nog geen account?</p>

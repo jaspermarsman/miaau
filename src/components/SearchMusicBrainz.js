@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useOptionContext} from "../context/SelectedOptionsProvider";
+import React, {useEffect, useState} from "react";
+import {useOptionContext} from "../context/SelectedOptionsProvider";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 
 export default function SearchMusicBrainz() {
-    const { selectedCountries, selectedGenres, searchResults, setSearchResults } = useOptionContext();
+    const {selectedCountries, selectedGenres, setSearchResults} = useOptionContext();
     const [search, setSearch] = useState(false)
     let history = useHistory();
 
@@ -29,12 +29,12 @@ export default function SearchMusicBrainz() {
         }
 
 
-    }, [search]);
+    }, [search, history, selectedCountries, selectedGenres, setSearchResults]);
 
 
     return (
         <div className="general">
-        <button onClick={() => setSearch(true)}>Ontdek artiesten</button>
+            <button onClick={() => setSearch(true)}>Ontdek artiesten</button>
         </div>
     )
 }

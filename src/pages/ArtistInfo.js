@@ -14,15 +14,13 @@ export default function ArtistInfo() {
     const [token, setToken] = useState("");
 
 
-    console.log(token);
-
     useEffect(() => {
         if (localStorage.getItem("accessToken")) {
             setToken(localStorage.getItem("accessToken"));
 
             async function checkSpotify() {
                 try {
-                    const response = await axios.get(`https://api.spotify.com/v1/search?query=${selectedArtist}&type=artist`, {
+                    await axios.get(`https://api.spotify.com/v1/search?query=${selectedArtist}&type=artist`, {
                         headers: {
                             Authorization: "Bearer " + token,
                             Accept: 'application/json',
@@ -32,36 +30,37 @@ export default function ArtistInfo() {
                     setArtistFoundOnSpotify(true);
 
                 } catch (error) {
-                    console.log(error);
                 }
                 ;
             };
             checkSpotify();
         }
-    }, [token]);
+    }, [token, selectedArtist, setArtistFoundOnSpotify]);
 
 
     return (
         <div className="general">
             <h1>{selectedArtist}</h1>
-            { artistFoundOnSpotify ? (
-                <ArtistOnSpotify/> ) :(
-                    <div>
+            {artistFoundOnSpotify ? (
+                <ArtistOnSpotify/>) : (
+                <div>
                     <p>Helaas, {selectedArtist} is niet gevonden op Spotify!</p>
-                        <p>Ontdek meer over deze artiest met onderstaande bronnen:</p>
-                        <div className="external-sources">
+                    <p>Ontdek meer over deze artiest met onderstaande bronnen:</p>
+                    <div className="external-sources">
                         <ol>
-                        { artistRelations && artistRelations.map((artistRelation) => {
-                            return <div>
-                                <li className="external-sources"><a href={artistRelation.url.resource} target="_blank">{artistRelation.type}</a></li>
+                            {artistRelations && artistRelations.map((artistRelation) => {
+                                return <div>
+                                    <li className="external-sources"><a href={artistRelation.url.resource}
+                                                                        rel="noreferrer"
+                                                                        target="_blank">{artistRelation.type}</a></li>
                                 </div>
-                        })
+                            })
 
-                        }
+                            }
                         </ol>
-                        </div>
                     </div>
-                    )}
+                </div>
+            )}
         </div>
     )
 }

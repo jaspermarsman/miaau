@@ -1,11 +1,11 @@
 import React from "react";
 import "./Form.css"
-import { useForm } from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import {useAuth} from "../../context/AuthContext";
 import {useHistory} from "react-router-dom";
 
 export default function SignUpForm() {
-    const { handleSubmit, formState: { errors }, register, reset } = useForm();
+    const {handleSubmit, register, reset} = useForm();
     const history = useHistory();
     const auth = useAuth();
 
@@ -13,14 +13,15 @@ export default function SignUpForm() {
         auth.signup({
             email: data.email,
             password: data.password,
-            callback: () => history.push("/Ontdekken") })
+            callback: () => history.push("/Ontdekken")
+        })
         console.log(data.email, data.password);
-        reset({email: "", password: "", });
+        reset({email: "", password: "",});
 
     }
 
 
-    return(
+    return (
         <div className="container">
             <form onSubmit={handleSubmit(onFormSubmit)}>
                 <label>
@@ -29,8 +30,10 @@ export default function SignUpForm() {
                         type="text"
                         placeholder="Email"
                         // onChange={(e) => setEmail(e.target)}
-                        {...register("email", {required: true,
-                            pattern: /^\S+@\S+$/i},
+                        {...register("email", {
+                                required: true,
+                                pattern: /^\S+@\S+$/i
+                            },
                         )} />
                 </label>
                 <label>
@@ -43,7 +46,8 @@ export default function SignUpForm() {
                 </label>
                 <button
                     type="submit"
-                >Registreer</button>
+                >Registreer
+                </button>
             </form>
         </div>
     )

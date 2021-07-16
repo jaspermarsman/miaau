@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext, createContext } from "react";
-import { FirebaseContext } from "./FirebaseContext";
+import React, {useState, useEffect, useContext, createContext} from "react";
+import {FirebaseContext} from "./FirebaseContext";
 
 
 const AuthContext = createContext();
 
-export function ProvideAuth({ children }) {
+export function ProvideAuth({children}) {
     const auth = useProvideAuth();
     return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
 }
@@ -18,7 +18,7 @@ function useProvideAuth() {
     const [user, setUser] = useState(null);
     const {firebase} = useContext(FirebaseContext);
 
-    const signin = ({ email, password, callback }) => {
+    const signin = ({email, password, callback}) => {
         return firebase
             .auth()
             .signInWithEmailAndPassword(email, password)
@@ -28,7 +28,7 @@ function useProvideAuth() {
                 return response.user;
             });
     };
-    const signup = ({ email, password, callback }) => {
+    const signup = ({email, password, callback}) => {
         return firebase
             .auth()
             .createUserWithEmailAndPassword(email, password)
@@ -74,7 +74,7 @@ function useProvideAuth() {
         });
         // Cleanup subscription on unmount
         return () => unsubscribe();
-    }, []);
+    }, [firebase]);
 
     return {
         isLoading,

@@ -22,6 +22,7 @@ export default function ArtistList() {
     useEffect(() => {
         if (selectedArtist) {
             const searchArtistID = selectedArtist.replaceAll(" ", "%20");
+
             async function fetchData() {
                 try {
                     const result = await axios.get(`https://musicbrainz.org/ws/2/artist/?query=${searchArtistID}+AND+country:${selectedCountries}&fmt=json`);
@@ -33,7 +34,7 @@ export default function ArtistList() {
 
             fetchData();
         }
-    }, [selectedArtist]);
+    }, [selectedArtist, selectedCountries]);
 
 
     useEffect(() => {
@@ -52,18 +53,18 @@ export default function ArtistList() {
             setSearch(false);
         }
 
-    }, [search])
+    }, [search, artistID, history, setArtistRelations])
 
 
     return (
         <div className="general">
             {searchResults ? (
                 <div className="confirm-box">
-                <ArtistSelect/>
-                <button onClick={() => {
-                    setSearch(true)
-                }}>Bevestig
-                </button>
+                    <ArtistSelect/>
+                    <button onClick={() => {
+                        setSearch(true)
+                    }}>Bevestig
+                    </button>
                 </div>
             ) : (
                 <div>

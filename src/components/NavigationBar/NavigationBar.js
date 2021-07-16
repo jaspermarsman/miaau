@@ -1,9 +1,9 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
 import "./NavigationBar.css"
-import { useAuth} from "../../context/AuthContext";
+import {useAuth} from "../../context/AuthContext";
 
-export function NavigationBar () {
+export function NavigationBar() {
     const auth = useAuth();
     return (
         <div>

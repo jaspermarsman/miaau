@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Multiselect from 'multiselect-react-dropdown';
-import { useOptionContext } from "../../context/SelectedOptionsProvider"
+import {useOptionContext} from "../../context/SelectedOptionsProvider"
 import "./MultiSelect.css"
 import countries from "../../data/countries.json"
 
 export default function CountrySelect() {
-    const { selectedCountries, setSelectedCountries, countryName, setCountryName } = useOptionContext();
+    const {selectedCountries, setSelectedCountries, countryName, setCountryName} = useOptionContext();
 
 
     function onSelect(e) {
@@ -19,36 +19,38 @@ export default function CountrySelect() {
 
     return (
         <div>
-            { selectedCountries ? (
+            {selectedCountries ? (
                 <div>
                     <div className="confirm-box">
-                <h2>Gekozen bestemming:</h2>
-                    <label className="input-label"> {countryName}
-                    <input
-                        className="checkbox"
-                        type="checkbox"
-                        value={countryName}
-                        checked={selectedCountries}
-                        onChange={() => {setSelectedCountries(null)}}
-                        />
-                    </label>
+                        <h2>Gekozen bestemming:</h2>
+                        <label className="input-label"> {countryName}
+                            <input
+                                className="checkbox"
+                                type="checkbox"
+                                value={countryName}
+                                checked={selectedCountries}
+                                onChange={() => {
+                                    setSelectedCountries(null)
+                                }}
+                            />
+                        </label>
                     </div>
                 </div>
-                ) : (
+            ) : (
                 <div>
                     <h2>Kies je bestemming: </h2>
-                <Multiselect
-                options={countries}
-                displayValue="name"
-                showCheckbox={true}
-                onSelect={onSelect}
-                onRemove={onRemove}
-                selectionLimit={1}
-                showArrow={true}
-                placeholder="Selecteer een land"
-                />
-                    </div>
-                )}
+                    <Multiselect
+                        options={countries}
+                        displayValue="name"
+                        showCheckbox={true}
+                        onSelect={onSelect}
+                        onRemove={onRemove}
+                        selectionLimit={1}
+                        showArrow={true}
+                        placeholder="Selecteer een land"
+                    />
+                </div>
+            )}
 
         </div>
     );
