@@ -19,15 +19,18 @@ export default function ArtistInfo() {
             setToken(localStorage.getItem("accessToken"));
 
             async function checkSpotify() {
+                setArtistFoundOnSpotify(false);
                 try {
-                    await axios.get(`https://api.spotify.com/v1/search?query=${selectedArtist}&type=artist`, {
+                    const result = await axios.get(`https://api.spotify.com/v1/search?query=${selectedArtist}&type=artist`, {
                         headers: {
                             Authorization: "Bearer " + token,
                             Accept: 'application/json',
 
                         },
                     })
-                    setArtistFoundOnSpotify(true);
+                    if (result.data.artists.items.length >= 1) {
+                        setArtistFoundOnSpotify(true);
+                    }
 
                 } catch (error) {
                 }
@@ -35,7 +38,7 @@ export default function ArtistInfo() {
             };
             checkSpotify();
         }
-    }, [token, selectedArtist, setArtistFoundOnSpotify]);
+    }, [token]);
 
 
     return (

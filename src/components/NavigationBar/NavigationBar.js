@@ -19,11 +19,10 @@ export function NavigationBar() {
                                 <NavLink to="/Login" activeClassName="active-link">
                                     <li>Inloggen</li>
                                 </NavLink>
-                                <NavLink to="/Signup" activeClassName="active-link">
-                                    <li>Aanmelden</li>
+                                <NavLink to="/Registreer" activeClassName="active-link">
+                                    <li>Registreren</li>
                                 </NavLink> </>)}
 
-                        <li>Help</li>
                         <Link to="/Signout">
                             <li onClick={() => auth.signout()}>Uitloggen</li>
                         </Link>
